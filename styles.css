@@ -1,0 +1,103 @@
+*{
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+body{
+	font-family: Montserrat;
+   --bg-color: #eaebe7;
+   --card-color: #a9ada4;
+   background-color: var(--bg-color);
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   justify-content: center;
+   align-items: center;
+}
+.card{
+   width: clamp(150px, 64vw, 300px);
+   position: relative;
+   background-color: transparent;
+   height: fit-content;
+}
+h1{
+	font-size: clamp(20px, 7.2vw, 32px);
+	margin: 6px 0;
+}
+.front, .back{
+   background-color: var(--card-color);
+   border-radius: 12px;
+   padding: 18px 14px;
+   backface-visibility: hidden;
+   transition: transform 1s;
+   box-shadow: 0 0 15px #0004;
+   animation: shadow 10s infinite both;
+}
+.front{
+   display: flex;
+   flex-direction: column;
+   transform: perspective(1200px);
+   height: fit-content;
+   justify-content: space-between;
+   gap: 5px;
+}
+.profile-img{
+   border-radius: 50%;
+   margin: 5px;
+   align-self: center;
+   width: clamp(0.75rem, 15vw, 4rem);
+}
+.profile-info{
+	font-size: clamp(10px, 4.7vw, 20px);
+}
+.back{
+   transform: perspective(1200px) rotateY(180deg);
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+.skill-section{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   justify-content: space-evenly;
+   height: 60%;
+}
+h3{
+   align-self: center;
+   margin: 10px;
+   font-size: clamp(20px, 3vw, 30px);
+}
+.skill{
+   display: flex;
+   gap: 4px;
+}
+.skill-bar{
+   width: 66%;
+   border: 1px solid #121212;
+   padding: 4px;
+   border-radius: 7px;
+   background-color: color-mix(in srgb, var(--bg-color) 20%, var(--card-color) 80%);
+}
+.bar-progress{
+   background-color: color-mix(in srgb, var(--card-color) 40%, #72ab6d 60%);
+   border-radius: 6px;
+   height: 100%;
+}
+.card:hover .back{
+   transform: rotateY(360deg);
+}
+.card:hover .front{
+   transform: rotateY(180deg);
+}
+.html{
+   width: 84%;
+}
+.css{
+   width: 92%;
+}
+.javascript{
+	width: 26%;
+}
