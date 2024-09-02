@@ -5,7 +5,7 @@
 }
 body{
 	font-family: Montserrat;
-   --bg-color: #eaebe7;
+   --bg-color: #e7ebdd;
    --card-color: #a9ada4;
    background-color: var(--bg-color);
    display: flex;
